@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  outline: none;
+  flex-wrap: wrap;
+}
+body {
+  background-image: url("logo192.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(51, 51, 51);
+  background-size: contain;
+}
+.body-container {
+  flex-direction: column;
+  display: flex;
+  gap: 30px;
+  position: relative;
+  align-items: center;
+  transform: translateY(10rem);
+}
+nav {
+  background-color: brown;
+  max-height: 70px;
+  min-height: 60px;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  top: 0;
+  z-index: 98;
+  position: fixed;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.nav-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  width: 100%;
+}
+.show-order-container {
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 40px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 9rem;
+  font-size: 15px;
+}
+.cart-logo {
+}
+.cart-counter {
+  background-color: brown;
+  padding: 4px 8px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+.header {
+  background-color: rgb(41, 61, 81);
+  color: white;
+  padding: 25px 10px;
+  text-align: center;
+  border-radius: 10px;
+  margin: auto;
+  flex: 0 0 200px;
+  max-width: 30rem;
+  min-width: 20rem;
+}
+.header h1 {
+  font-size: 25px;
+}
+.header p {
+  font-size: 15px;
+  margin-top: 15px;
+}
+.product-container {
+  background-color: white;
+  border: none;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0.3px 0.3px 6px rgb(46, 43, 43);
+  width: 25rem;
+  min-width: 40rem;
+  max-height: 30rem;
+  border-radius: 10px;
+  animation: pop ease 3.5s;
+}
+
+@keyframes pop {
+  0% {
+    transform: translatey(15%);
+  }
+  100% {
+    transform: translatey(0%);
+  }
+}
+@media (min-width: 450px) {
+  .header {
+    font-size: 12px;
+  }
+  .product-container {
+  }
+}
+@media (min-width: 700px) {
+  .product-container {
+  }
+}
+.product-lists {
+  display: flex;
+  min-height: 50px;
+  padding: 10px 0;
+  font-size: 25px;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  flex-shrink: 3;
+}
+.product-info {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.product-info .description {
+  font-size: 17px;
+  font-style: italic;
+}
+.product-info .price {
+  color: burlywood;
+  font-size: 20px;
+  font-weight: bold;
+}
+.product-control form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product-control,
+.input {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+}
+.product-control input {
+  width: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+form button {
+  background: rgb(248, 184, 101);
+  border: none;
+  border-radius: 10px;
+  padding: 7px 3px;
+  width: 4rem;
+  font-weight: bold;
+  cursor: pointer;
+  justify-self: right;
+  color: white;
+  margin-left: auto;
+  font-size: 13px;
+}
+#root {
+  width: 100%;
+}
+.modal {
+  max-width: 30rem;
+  min-width: 25rem;
+  background-color: white;
+  position: absolute;
+  top: 10rem;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translatex(-50%);
+  z-index: 100;
+  animation: modal ease 0.2s;
+}
+@keyframes modal {
+  0% {
+    transform: translateY(-15%);
+    left: 20%;
+  }
+  100% {
+    transform: translateY(0%);
+    left: 20%;
+  }
+}
+.modal-content {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 99;
+  opacity: 0.5;
+}
+.modal-total-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.modal .modal-btn {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+}
+.modal-btn button:first-child {
+  background-color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  width: fit-content;
+  font-weight: bold;
+  color: rgb(165, 95, 42);
+  border: 1px solid rgb(165, 95, 42);
+}
+.modal-btn button:first-child:hover {
+  background: rgb(165, 95, 42);
+  color: white;
+}
+.modal-btn button:first-child:active {
+  background: blue;
+}
+.modal-btn button:last-child {
+  background-color: rgb(165, 95, 42);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  width: fit-content;
+  font-weight: bold;
+  color: white;
+  border: none;
+}
